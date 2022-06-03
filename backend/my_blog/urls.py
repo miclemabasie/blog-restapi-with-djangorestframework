@@ -11,3 +11,7 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "My Django Blog API"
+admin.site.site_header = "Django Blog Admin Portal"
+admin.site.index_title = "Welcom to the Blog Api"

@@ -48,7 +48,7 @@ THIRD_PARTY_APPS = [
 ]
 
 CUSTOM_APPS = [
-    'blog', 'common'
+    'blog', 'common', 'users'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
@@ -133,6 +133,8 @@ STATICFILES_DIRS = []
 MEDIA_URL = '/mediafiles/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
+AUTH_USER_MODEL = "users.User"
+
 
 # LOGGING
 import logging
@@ -168,7 +170,7 @@ logging.config.dictConfig(
             "level":"INFO",
             "class":"logging.FileHandler",
             "formatter":"file",
-            "filename":"backend/logs/django_blog.log"
+            "filename":"logs/django_blog.log"
         },
         "django.server":DEFAULT_LOGGING["handlers"]["django.server"]
     },
